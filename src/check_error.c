@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:13:35 by mhernang          #+#    #+#             */
-/*   Updated: 2023/03/26 20:48:13 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:48:19 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ int	check_error(int args, char **argv)
 {
 	char	*map;
 	int		return_value;
+	s_map	matrix;
 
 	if (args != 2)
 	{
@@ -129,7 +130,6 @@ int	check_error(int args, char **argv)
 		return (-1);
 	}
 	map = read_map(argv[1]);
-	printf("%s", map);
 	if (!map)
 	{
 		printf("Error\nInvalid map configuration");
@@ -140,6 +140,8 @@ int	check_error(int args, char **argv)
 	return_value += check_coleccionable(map);
 	return_value += check_dimensions(map);
 	return_value += check_walls(map);
+	matrix = str_to_mtrx(map);
+	printf("'%d', '%d'\n", matrix.width, matrix.height);
 	return_value += 0; //check_path(map);
 	printf("Return: %d\n", return_value);
 	if (return_value != 0)

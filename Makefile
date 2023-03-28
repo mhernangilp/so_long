@@ -6,35 +6,42 @@
 #    By: mhernang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:42 by mhernang          #+#    #+#              #
-#    Updated: 2023/03/26 20:48:00 by mhernang         ###   ########.fr        #
+#    Updated: 2023/03/28 13:48:17 by mhernang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+LIB = ar rcs
+
+CC = gcc
+
 NAME = so_long
 
-MLX = libmlx.a
+SRC = src/main.c \
+	  src/check_error.c \
+	  src/utils.c \
+	  src/read_map.c \
+	  src/gnl/get_next_line.c \
+	  src/gnl/get_next_line_utils.c
 
-SRCS = src/*.c \
-	   src/gnl/*.c
+OBJ = ${SRC:.c=.o}
 
-CC = clang
+FLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Wall -Wextra -Werror
+INCLUDE = so_long.h \
+		  get_next_line.h
 
-$(NAME):
-	@ $(MAKE) -C mlx all >/dev/null 2>&1
-	@ cp ./mlx/$(MLX) .
-	@$(CC) $(CFLAGS) -g3 -Ofast -o $(NAME) -Imlx $(SRCS) -g -fsanitize=address -Lmlx -lmlx -lm -framework OpenGL -framework AppKit
+all:	${NAME}
+
+${NAME}: ${OBJ} ${INCLUDE}
+	gcc ${OBJ} ${FLAGS} -o ${NAME}
+
 
 clean:
-	@ $(MAKE) -C mlx clean
-	@ rm -rf so_long.dSYM so_long_bonus.dSYM >/dev/null 2>&1
+	rm -f ${OBJ}
 
-fclean:	clean
-	@ rm $(MLX)
-	@ rm so_long >/dev/null 2>&1
-	@ rm so_long_bonus >/dev/null 2>&1
+fclean: clean
+	rm -f ${NAME}
 
-re:			fclean all
+re: fclean all
 
-.PHONY:		$(NAME) all bonus test clean fclean re
+.PHONY: all clean fclear

@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:24:54 by mhernang          #+#    #+#             */
-/*   Updated: 2023/03/26 20:48:07 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:51:53 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,29 +56,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (str);
 	}
 	return (NULL);
-}
-
-char	*read_map(char	*path)
-{
-	int		fd;
-	char	*map;
-	char	*temp1;
-	char	*temp2;
-
-	fd = open(path, O_RDONLY);
-	temp1 = get_next_line(fd);
-	map = ft_strjoin("", temp1);
-	while (temp1)
-	{
-		free(temp1);
-		temp1 = get_next_line(fd);
-		temp2 = ft_strdup(map);
-		free(map);
-		if (temp1)
-			map = ft_strjoin(temp2, temp1);
-		free(temp2);
-	}
-	close(fd);
-	free(temp1);
-	return (map);
 }
