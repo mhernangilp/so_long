@@ -6,7 +6,7 @@
 #    By: mhernang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:42 by mhernang          #+#    #+#              #
-#    Updated: 2023/03/28 13:48:17 by mhernang         ###   ########.fr        #
+#    Updated: 2023/04/09 18:59:52 by mhernang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ NAME = so_long
 
 SRC = src/main.c \
 	  src/check_error.c \
+	  src/check_error_utils1.c \
+	  src/check_error_utils2.c \
 	  src/utils.c \
 	  src/read_map.c \
 	  src/gnl/get_next_line.c \

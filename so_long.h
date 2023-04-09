@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:59:55 by mhernang          #+#    #+#             */
-/*   Updated: 2023/03/28 13:48:14 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/09 19:30:20 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,20 @@ typedef struct s_map
 	int		height;
 }	s_map;
 
+typedef struct pos
+{
+	int	y;
+	int	x;
+}	pos;
+
 int	check_error(int args, char **argv);
-char	*read_map(char *path);
-s_map	str_to_mtrx(char *map);
-char	*ft_strjoin(char const *s1, char const *s2);
+s_map	read_map(char *path);
+int	check_characters(s_map map);
+int	check_player(s_map map);
+int	check_exit(s_map map);
+int	check_coleccionable(s_map map);
+int	check_walls(s_map map);
+int	check_path(s_map map);
 int	ft_strrncmp(char *s1, char *s2, unsigned int n);
 
 #endif
