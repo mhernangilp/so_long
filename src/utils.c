@@ -6,16 +6,16 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:24:54 by mhernang          #+#    #+#             */
-/*   Updated: 2023/03/28 11:51:53 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/16 21:39:24 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	ft_strrncmp(char *s1, char *s2, unsigned int n)
+int	ft_strrncmp(char *s1, char *s2, int n)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = ft_strlen(s1) - 1;
 	j = ft_strlen(s2) - 1;

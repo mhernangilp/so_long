@@ -6,7 +6,7 @@
 #    By: mhernang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:42 by mhernang          #+#    #+#              #
-#    Updated: 2023/04/09 18:59:52 by mhernang         ###   ########.fr        #
+#    Updated: 2023/04/16 21:39:17 by mhernang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC = src/main.c \
 
 OBJ = ${SRC:.c=.o}
 
-FLAGS = -Wall -Werror -Wextra
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 
 INCLUDE = so_long.h \
 		  get_next_line.h
@@ -35,8 +36,7 @@ INCLUDE = so_long.h \
 all:	${NAME}
 
 ${NAME}: ${OBJ} ${INCLUDE}
-	gcc ${OBJ} ${FLAGS} -o ${NAME}
-
+	${CC} ${OBJ} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 clean:
 	rm -f ${OBJ}

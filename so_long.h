@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:59:55 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/09 19:30:20 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/16 21:39:21 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int	check_exit(s_map map);
 int	check_coleccionable(s_map map);
 int	check_walls(s_map map);
 int	check_path(s_map map);
-int	ft_strrncmp(char *s1, char *s2, unsigned int n);
+int	ft_strrncmp(char *s1, char *s2, int n);
 
 #endif

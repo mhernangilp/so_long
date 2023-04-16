@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:13:35 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/09 19:30:39 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:02:39 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	check_error(int args, char **argv)
 {
 	s_map	map;
 	int		return_value;
-	s_map	matrix;
 
 	if (args != 2)
 	{
