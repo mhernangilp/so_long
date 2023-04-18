@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:50:48 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/09 19:30:31 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:17:49 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,7 @@ s_map	read_map(char	*path)
 		if (temp)
 			while (++i < map.width)
 				map.map[j][i] = temp[i];
-	}
-
-	//mostrar mapa
-	j = -1;	
-	while (++j < map.height)
-	{
-		i = -1;
-		while (++i < map.width)
-			printf("%c", map.map[j][i]);
-		printf("\n");
-	}
-    //termina mostrar mapa
-
+	}	
 	close(fd);
 	free(temp);
 	return (map);

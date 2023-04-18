@@ -6,7 +6,7 @@
 #    By: mhernang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:42 by mhernang          #+#    #+#              #
-#    Updated: 2023/04/16 21:39:17 by mhernang         ###   ########.fr        #
+#    Updated: 2023/04/18 18:24:53 by mhernang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SRC = src/main.c \
 	  src/utils.c \
 	  src/read_map.c \
 	  src/gnl/get_next_line.c \
-	  src/gnl/get_next_line_utils.c
+	  src/gnl/get_next_line_utils.c \
+	  src/init.c \
+	  src/render.c \
+	  src/input.c
 
 OBJ = ${SRC:.c=.o}
 

@@ -6,13 +6,13 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:58:41 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/09 19:30:34 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/18 18:35:56 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static pos	get_pos(s_map map, char c)
+pos	get_pos(s_map map, char c)
 {
 	int	i;
 	int	j;

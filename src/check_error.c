@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:13:35 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/16 19:02:39 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:17:51 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,12 @@ int	check_error(int args, char **argv)
 	return_value += check_coleccionable(map);
 	return_value += check_walls(map);
 	return_value += check_path(map);
+							//freemap    		 	
 	if (return_value != 0)
 	{
 		printf("Error\nInvalid map configuration");
+					//quitar prinft
+
 		return (-1);
 	}
 	return (return_value);
