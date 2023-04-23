@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-int	check_characters(s_map map)
+int	check_characters(t_map map)
 {
 	int	i;
 	int	j;
@@ -30,7 +30,7 @@ int	check_characters(s_map map)
 	return (0);
 }
 
-int	check_player(s_map map)
+int	check_player(t_map map)
 {
 	int	found;
 	int	i;
@@ -50,7 +50,7 @@ int	check_player(s_map map)
 	return (0);
 }
 
-int	check_exit(s_map map)
+int	check_exit(t_map map)
 {
 	int	found;
 	int	i;
@@ -70,7 +70,7 @@ int	check_exit(s_map map)
 	return (0);
 }
 
-int	check_coleccionable(s_map map)
+int	check_coleccionable(t_map map)
 {
 	int	found;
 	int	i;
@@ -90,7 +90,7 @@ int	check_coleccionable(s_map map)
 	return (0);
 }
 
-int	check_walls(s_map map)
+int	check_walls(t_map map)
 {
 	int	j;
 	int	wrong;

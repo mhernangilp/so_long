@@ -12,19 +12,18 @@
 
 #include "../so_long.h"
 
-static void	move_up(s_game *game)
+static void	move_up(t_game *game)
 {
 	if (game -> map.map[game -> player.y - 1][game -> player.x] == 'E')
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			mlx_destroy_window(game -> mlx, game -> win);
 			printf("Enhorabuena !!\n");
+			end_game(game);
 		}
 	}
 	else if (game -> map.map[game -> player.y - 1][game -> player.x] != '1')
 	{
-		
 		if (game -> map.map[game -> player.y - 1][game -> player.x] == 'C')
 			game -> collec += 1;
 		game -> map.map[game -> player.y][game -> player.x] = '0';
@@ -35,14 +34,14 @@ static void	move_up(s_game *game)
 	}
 }
 
-static void	move_down(s_game *game)
+static void	move_down(t_game *game)
 {
 	if (game -> map.map[game -> player.y + 1][game -> player.x] == 'E')
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			mlx_destroy_window(game -> mlx, game -> win);	
 			printf("Enhorabuena !!\n");
+			end_game(game);
 		}
 	}
 	else if (game -> map.map[game -> player.y + 1][game -> player.x] != '1')
@@ -57,14 +56,14 @@ static void	move_down(s_game *game)
 	}
 }
 
-static void	move_right(s_game *game)
+static void	move_right(t_game *game)
 {
 	if (game -> map.map[game -> player.y][game -> player.x + 1] == 'E')
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			mlx_destroy_window(game -> mlx, game -> win);
 			printf("Enhorabuena !!\n");
+			end_game(game);
 		}
 	}
 	else if (game -> map.map[game -> player.y][game -> player.x + 1] != '1')
@@ -79,14 +78,14 @@ static void	move_right(s_game *game)
 	}
 }
 
-static void move_left(s_game *game)
+static void	move_left(t_game *game)
 {
 	if (game -> map.map[game -> player.y][game -> player.x - 1] == 'E')
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			mlx_destroy_window(game -> mlx, game -> win);
 			printf("Enhorabuena !!\n");
+			end_game(game);
 		}
 	}
 	else if (game -> map.map[game -> player.y][game -> player.x - 1] != '1')
@@ -101,11 +100,11 @@ static void move_left(s_game *game)
 	}
 }
 
-int	input(int key, s_game *game)
+int	input(int key, t_game *game)
 {
 	(void)game;
 	if (key == ESC)
-		mlx_destroy_window(game -> mlx, game -> win);
+		end_game(game);
 	else if (key == KEY_UP)
 		move_up(game);
 	else if (key == KEY_DOWN)

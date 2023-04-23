@@ -26,7 +26,8 @@ SRC = src/main.c \
 	  src/gnl/get_next_line_utils.c \
 	  src/init.c \
 	  src/render.c \
-	  src/input.c
+	  src/input.c \
+	  src/end_game.c
 
 OBJ = ${SRC:.c=.o}
 

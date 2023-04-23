@@ -14,7 +14,7 @@
 
 int	check_error(int args, char **argv)
 {
-	s_map	map;
+	t_map	map;
 	int		return_value;
 
 	if (args != 2)
@@ -39,7 +39,7 @@ int	check_error(int args, char **argv)
 	return_value += check_coleccionable(map);
 	return_value += check_walls(map);
 	return_value += check_path(map);
-							//freemap    		 	
+	free_map(&map);
 	if (return_value != 0)
 	{
 		printf("Error\nInvalid map configuration");

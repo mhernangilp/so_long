@@ -12,11 +12,11 @@
 
 #include "../so_long.h"
 
-pos	get_pos(s_map map, char c)
+t_pos	get_pos(t_map map, char c)
 {
 	int	i;
 	int	j;
-	pos	pos;
+	t_pos	pos;
 
 	j = -1;
 	pos.y = -1;
@@ -25,20 +25,22 @@ pos	get_pos(s_map map, char c)
 	{
 		i = -1;
 		while (++i < map.width)
+		{
 			if (map.map[j][i] == c)
 			{
 				pos.y = j;
 				pos.x = i;
 			}
+		}
 	}
 	return (pos);
 }
 
-static void	floodfill(s_map *map, int y, int x)
+static void	floodfill(t_map *map, int y, int x)
 {
-	if (y < 0 || x < 0 || y >= map -> height ||
-			x >= map -> width || map -> map[y][x] == '1' ||
-			map -> map[y][x] == 'F')
+	if (y < 0 || x < 0 || y >= map -> height
+		|| x >= map -> width || map -> map[y][x] == '1'
+		|| map -> map[y][x] == 'F')
 		return ;
 	map -> map[y][x] = 'F';
 	floodfill(map, y - 1, x);
@@ -47,18 +49,18 @@ static void	floodfill(s_map *map, int y, int x)
 	floodfill(map, y, x + 1);
 }
 
-int	check_path(s_map map)
+int	check_path(t_map map)
 {
-	pos	Ppos;
-	pos	Epos;
+	t_pos	ppos;
+	t_pos	epos;
 
-	Ppos = get_pos(map, 'P');
-	Epos = get_pos(map, 'E');
-	if (Ppos.y == -1 || Ppos.x == -1 ||
-			Epos.y == -1 || Epos.x == -1)
+	ppos = get_pos(map, 'P');
+	epos = get_pos(map, 'E');
+	if (ppos.y == -1 || ppos.x == -1
+		|| epos.y == -1 || epos.x == -1)
 		return (-1);
-	floodfill(&map, Ppos.y, Ppos.x);
-	if (map.map[Epos.y][Epos.x] != 'F')
+	floodfill(&map, ppos.y, ppos.x);
+	if (map.map[epos.y][epos.x] != 'F')
 		return (-1);
-	return 0;
+	return (0);
 }

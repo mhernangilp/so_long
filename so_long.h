@@ -24,34 +24,34 @@ typedef struct s_map
 	char	**map;
 	int		width;
 	int		height;
-}	s_map;
+}	t_map;
 
-typedef struct pos
+typedef struct s_pos
 {
 	int	y;
 	int	x;
-}	pos;
+}	t_pos;
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				s_img;
+}				t_img;
 
 typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
-	s_map	map;
-	s_img	img;
-	pos		player;
+	t_map	map;
+	t_img	img;
+	t_pos		player;
 	int		moves;
 	int		total_collec;
 	int		collec;
-}				s_game;
+}				t_game;
 
 enum e_keycode
 {
@@ -62,18 +62,20 @@ enum e_keycode
 	ESC = 53
 };
 
-int	input(int key, s_game *game);
-void	init_game(s_game *game, char **argv);
-int	render(s_game *game);
-int	check_error(int args, char **argv);
-s_map	read_map(char *path);
-pos	get_pos(s_map map, char c);
-int	check_characters(s_map map);
-int	check_player(s_map map);
-int	check_exit(s_map map);
-int	check_coleccionable(s_map map);
-int	check_walls(s_map map);
-int	check_path(s_map map);
-int	ft_strrncmp(char *s1, char *s2, int n);
+int		input(int key, t_game *game);
+void	init_game(t_game *game, char **argv);
+int		render(t_game *game);
+void	free_map(t_map *map);
+int		end_game(t_game *game);
+int		check_error(int args, char **argv);
+t_map	read_map(char *path);
+t_pos		get_pos(t_map map, char c);
+int		check_characters(t_map map);
+int		check_player(t_map map);
+int		check_exit(t_map map);
+int		check_coleccionable(t_map map);
+int		check_walls(t_map map);
+int		check_path(t_map map);
+int		ft_strrncmp(char *s1, char *s2, int n);
 
 #endif

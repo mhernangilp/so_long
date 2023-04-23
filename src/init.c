@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-static int	get_collec(s_map map)
+static int	get_collec(t_map map)
 {
 	int	collec;
 	int	x;
@@ -30,7 +30,7 @@ static int	get_collec(s_map map)
 	return (collec);
 }
 
-void init_game(s_game *game, char **argv)
+void	init_game(t_game *game, char **argv)
 {
 	game -> map = read_map(argv[1]);
 	game -> mlx = mlx_init();
@@ -38,7 +38,8 @@ void init_game(s_game *game, char **argv)
 			game -> map.height * 50, "so_long");
 	game -> player = get_pos(game -> map, 'P');
 	game -> img.img = mlx_new_image(game -> mlx, 50, 50);
-	game -> img.addr = mlx_get_data_addr(game -> img.img, &game -> img.bits_per_pixel,
+	game -> img.addr = mlx_get_data_addr(game -> img.img,
+			&game -> img.bits_per_pixel,
 			&game -> img.line_length, &game -> img.endian);
 	game -> moves = 0;
 	game -> total_collec = get_collec(game -> map);

@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-static char	*get_path(s_map map, int x, int y)
+static char	*get_path(t_map map, int x, int y)
 {
 	char	*path;
 
@@ -29,7 +29,7 @@ static char	*get_path(s_map map, int x, int y)
 	return (path);
 }
 
-int	render(s_game *game)
+int	render(t_game *game)
 {
 	char	*path;
 	int		imgw;
@@ -45,8 +45,10 @@ int	render(s_game *game)
 		while (++x < game -> map.width)
 		{
 			path = get_path(game -> map, x, y);
-			game -> img.img = mlx_xpm_file_to_image(game -> mlx, path, &imgw, &imgh);
-			mlx_put_image_to_window(game -> mlx, game -> win, game -> img.img, x * 50, y * 50);
+			game -> img.img = mlx_xpm_file_to_image(game -> mlx,
+					path, &imgw, &imgh);
+			mlx_put_image_to_window(game -> mlx, game -> win,
+				game -> img.img, x * 50, y * 50);
 		}
 	}
 	return (0);
