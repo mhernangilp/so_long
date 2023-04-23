@@ -18,7 +18,7 @@ static void	move_up(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			ft_printf("Enhorabuena !!\n");
+			ft_printf("Good Job !!\n");
 			end_game(game);
 		}
 	}
@@ -40,7 +40,7 @@ static void	move_down(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			ft_printf("Enhorabuena !!\n");
+			ft_printf("Good Job !!\n");
 			end_game(game);
 		}
 	}
@@ -62,7 +62,7 @@ static void	move_right(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			ft_printf("Enhorabuena !!\n");
+			ft_printf("Good Job !!\n");
 			end_game(game);
 		}
 	}
@@ -84,7 +84,7 @@ static void	move_left(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			ft_printf("Enhorabuena !!\n");
+			ft_printf("Good Job !!\n");
 			end_game(game);
 		}
 	}
