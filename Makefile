@@ -27,7 +27,15 @@ SRC = src/main.c \
 	  src/init.c \
 	  src/render.c \
 	  src/input.c \
-	  src/end_game.c
+	  src/end_game.c \
+	  src/ft_printf/ft_printf.c \
+	  src/ft_printf/tools/ft_itoa.c \
+	  src/ft_printf/tools/ret_putchar.c \
+	  src/ft_printf/tools/ret_puthex.c \
+	  src/ft_printf/tools/ret_putnbr.c \
+	  src/ft_printf/tools/ret_putstr.c \
+	  src/ft_printf/tools/ret_putuns.c \
+	  src/ft_printf/tools/ret_putvoid.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -35,7 +43,8 @@ OBJ = ${SRC:.c=.o}
 	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 
 INCLUDE = so_long.h \
-		  get_next_line.h
+		  get_next_line.h \
+		  ft_printf.h
 
 all:	${NAME}
 

@@ -18,7 +18,7 @@ static void	move_up(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			printf("Enhorabuena !!\n");
+			ft_printf("Enhorabuena !!\n");
 			end_game(game);
 		}
 	}
@@ -30,7 +30,7 @@ static void	move_up(t_game *game)
 		game -> map.map[game -> player.y - 1][game -> player.x] = 'P';
 		game -> player.y -= 1;
 		game -> moves += 1;
-		printf("Moves -> %d\n", game -> moves);
+		ft_printf("Moves -> %d\n", game -> moves);
 	}
 }
 
@@ -40,7 +40,7 @@ static void	move_down(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			printf("Enhorabuena !!\n");
+			ft_printf("Enhorabuena !!\n");
 			end_game(game);
 		}
 	}
@@ -52,7 +52,7 @@ static void	move_down(t_game *game)
 		game -> map.map[game -> player.y + 1][game -> player.x] = 'P';
 		game -> player.y += 1;
 		game -> moves += 1;
-		printf("Moves -> %d\n", game -> moves);
+		ft_printf("Moves -> %d\n", game -> moves);
 	}
 }
 
@@ -62,7 +62,7 @@ static void	move_right(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			printf("Enhorabuena !!\n");
+			ft_printf("Enhorabuena !!\n");
 			end_game(game);
 		}
 	}
@@ -74,7 +74,7 @@ static void	move_right(t_game *game)
 		game -> map.map[game -> player.y][game -> player.x + 1] = 'P';
 		game -> player.x += 1;
 		game -> moves += 1;
-		printf("Moves -> %d\n", game -> moves);
+		ft_printf("Moves -> %d\n", game -> moves);
 	}
 }
 
@@ -84,7 +84,7 @@ static void	move_left(t_game *game)
 	{
 		if (game -> collec == game -> total_collec)
 		{
-			printf("Enhorabuena !!\n");
+			ft_printf("Enhorabuena !!\n");
 			end_game(game);
 		}
 	}
@@ -96,7 +96,7 @@ static void	move_left(t_game *game)
 		game -> map.map[game -> player.y][game -> player.x - 1] = 'P';
 		game -> player.x -= 1;
 		game -> moves += 1;
-		printf("Moves -> %d\n", game -> moves);
+		ft_printf("Moves -> %d\n", game -> moves);
 	}
 }
 
