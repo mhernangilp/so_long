@@ -49,6 +49,7 @@ int	render(t_game *game)
 					path, &imgw, &imgh);
 			mlx_put_image_to_window(game -> mlx, game -> win,
 				game -> img.img, x * 50, y * 50);
+			render_moves(game);
 		}
 	}
 	return (0);

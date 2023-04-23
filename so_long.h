@@ -63,6 +63,7 @@ enum e_keycode
 int		input(int key, t_game *game);
 void	init_game(t_game *game, char **argv);
 int		render(t_game *game);
+void	render_moves(t_game *game);
 void	free_map(t_map *map);
 int		end_game(t_game *game);
 int		check_error(int args, char **argv);

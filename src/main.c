@@ -23,6 +23,5 @@ int	main(int args, char **argv)
 	mlx_hook(game.win, 17, 1L << 0, end_game, (void *) &game);
 	mlx_loop_hook(game.mlx, render, (void *) &game);
 	mlx_loop(game.mlx);
-	//system("leaks so_long");
 	return (0);
 }

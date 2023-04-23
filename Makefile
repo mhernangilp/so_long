@@ -28,6 +28,7 @@ SRC = src/main.c \
 	  src/render.c \
 	  src/input.c \
 	  src/end_game.c \
+	  src/render_moves.c \
 	  src/ft_printf/ft_printf.c \
 	  src/ft_printf/tools/ft_itoa.c \
 	  src/ft_printf/tools/ret_putchar.c \
