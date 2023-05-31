@@ -6,11 +6,11 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 17:01:46 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/23 17:01:48 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:13:29 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../so_long.h"
+#include "../so_long.h"
 
 static char	*get_path(int n)
 {

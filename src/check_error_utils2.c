@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 18:58:41 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/18 18:35:56 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:12:39 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_pos	get_pos(t_map map, char c)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_pos	pos;
 
 	j = -1;

@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:59:55 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/18 20:17:35 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:14:04 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_game
 	void	*win;
 	t_map	map;
 	t_img	img;
-	t_pos		player;
+	t_pos	player;
 	int		moves;
 	int		total_collec;
 	int		collec;
@@ -68,7 +68,7 @@ void	free_map(t_map *map);
 int		end_game(t_game *game);
 int		check_error(int args, char **argv);
 t_map	read_map(char *path);
-t_pos		get_pos(t_map map, char c);
+t_pos	get_pos(t_map map, char c);
 int		check_characters(t_map map);
 int		check_player(t_map map);
 int		check_exit(t_map map);
