@@ -19,9 +19,9 @@ int	main(int args, char **argv)
 	if (check_error(args, argv))
 		return (-1);
 	init_game(&game, argv);
+	render(&game);
 	mlx_hook(game.win, 2, 1L << 0, input, (void *) &game);
 	mlx_hook(game.win, 17, 1L << 0, end_game, (void *) &game);
-	mlx_loop_hook(game.mlx, render, (void *) &game);
 	mlx_loop(game.mlx);
 	return (0);
 }

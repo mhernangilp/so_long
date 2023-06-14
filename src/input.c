@@ -115,5 +115,6 @@ int	input(int key, t_game *game)
 		move_right(game);
 	else
 		return (1);
+	render(game);
 	return (0);
 }
