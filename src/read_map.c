@@ -6,11 +6,21 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:50:48 by mhernang          #+#    #+#             */
-/*   Updated: 2023/04/18 20:17:49 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:12:01 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+static int	open_file(char *path)
+{
+	int	fd;
+
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		exit(1);
+	return (fd);
+}
 
 static int	getdimensions(char *path, t_map *map)
 {
@@ -20,7 +30,7 @@ static int	getdimensions(char *path, t_map *map)
 	int		widthaux;
 	int		height;
 
-	fd = open(path, O_RDONLY);
+	fd = open_file(path);
 	temp = get_next_line(fd);
 	if (!temp)
 		return (-1);
@@ -68,7 +78,7 @@ t_map	read_map(char	*path)
 	i = -1;
 	while (++i < map.height)
 		map.map[i] = malloc(map.width * sizeof(char *));
-	fd = open(path, O_RDONLY);
+	fd = open_file(path);
 	temp = get_next_line(fd);
 	i = -1;
 	while (++i < map.width)
