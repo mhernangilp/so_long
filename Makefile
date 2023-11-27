@@ -6,7 +6,7 @@
 #    By: mhernang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/26 20:16:42 by mhernang          #+#    #+#              #
-#    Updated: 2023/04/18 18:24:53 by mhernang         ###   ########.fr        #
+#    Updated: 2023/06/21 13:20:42 by mhernang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC = src/main.c \
 	  src/render.c \
 	  src/input.c \
 	  src/end_game.c \
+	  src/open_file.c \
 	  src/render_moves.c \
 	  src/ft_printf/ft_printf.c \
 	  src/ft_printf/tools/ft_itoa.c \

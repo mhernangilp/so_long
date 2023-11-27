@@ -6,7 +6,7 @@
 /*   By: mhernang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:59:55 by mhernang          #+#    #+#             */
-/*   Updated: 2023/05/31 17:14:04 by mhernang         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:20:18 by mhernang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int		check_coleccionable(t_map map);
 int		check_walls(t_map map);
 int		check_path(t_map map);
 int		ft_strrncmp(char *s1, char *s2, int n);
+int		open_file(char *path);
 
 #endif
