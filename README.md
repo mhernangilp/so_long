@@ -15,6 +15,10 @@
 </h3>
 
 ---
+<p align="center">
+	<img width="649" alt="screenshot" src="https://github.com/mhernangilp/so_long/assets/123759990/a3a19924-ebc2-4d51-bffb-bf140cd99363">
+</p>
+
 
 ## 💡 About the project
 
